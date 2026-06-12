@@ -16,7 +16,7 @@
     let isUploading = $state(false);
     let uploadStatus = $state('');
     let allowed = $state(false);
-    let sidebarOpen = $state(true);  
+    let sidebarOpen = $state(false);  
     let tracks = $state<{ id: string, title: string, url: string }[]>([]);
     let currentTrackUrl = $state('');
 
@@ -102,7 +102,7 @@
 
 {#if allowed}
 <main class="bg-[#0e0b0b] min-h-screen flex overflow-hidden text-white">
-  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[300px]' : 'grid-cols-[0px]'}`}>
+  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden flex flex-col gap-3 p-6 border-r border-neutral-800 bg-[#0e0b0b]">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-white cursor-pointer">close</button>
       <h1 class="text-2xl font-bold mb-2">The Batcave</h1>

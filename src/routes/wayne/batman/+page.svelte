@@ -5,7 +5,7 @@
   import { goto } from '$app/navigation';
 
   let allowed = $state(false);
-  let sidebarOpen = $state(true);
+  let sidebarOpen = $state(false);
   let timestamp = $state("Loading...");
   let weather = $state("Loading...");
 
@@ -60,7 +60,7 @@
 
 {#if allowed}
     <main class="bg-[#0e0b0b] min-h-screen flex overflow-hidden text-white">
-  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[300px]' : 'grid-cols-[0px]'}`}>
+  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden min-w-0 flex flex-col gap-3 p-6 border-r border-neutral-800 bg-[#0e0b0b]">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-white cursor-pointer">close</button>
       <h1 class="text-2xl font-bold mb-2">The Batcave</h1>
@@ -93,7 +93,7 @@
 <p>Hello Dark Knight. Are you ready for fighting crime? </p> <center> <br /> <br /> <div class="rounded-lg border p-4 w-full max-w-4xl"> <div class="rounded-lg border p-4 w-100"><span class="text-2xl">Time: {timestamp}</span> <br /> <span class="text-2xl">Weather: {weather}</span></div> <br /> 
 <br />
 
-<iframe src="https://intechwebd26news.wordpress.com/" height="500px" width="800px"></iframe> <br />
+<iframe src="https://intechwebd26news.wordpress.com/" height="300px" width="400px"></iframe> <br />
 </div>
 </center>
 </div>

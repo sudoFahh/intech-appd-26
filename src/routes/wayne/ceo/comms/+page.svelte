@@ -6,7 +6,7 @@
   import { goto } from '$app/navigation';
 
   let allowed = $state(false);
-  let sidebarOpen = $state(true);
+  let sidebarOpen = $state(false);
 
   onMount(() => {
     const params = new URLSearchParams(window.location.search);
@@ -122,7 +122,7 @@ async function handleJoinRoom() {
 {#if allowed}
 <main class="bg-[#fcfcfc] text-neutral-900 min-h-screen flex overflow-hidden">
 
-  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[300px]' : 'grid-cols-[0px]'}`}>
+  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden flex flex-col gap-3 p-6 border-r border-neutral-200 bg-[#f5f5f5] h-full">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-neutral-600 cursor-pointer hover:text-black">
         close

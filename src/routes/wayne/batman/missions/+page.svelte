@@ -7,7 +7,7 @@
     import { db } from '$lib/firebase.client';
 
     let allowed = $state(false);
-    let sidebarOpen = $state(true);
+    let sidebarOpen = $state(false);
     let newItem = $state('');
     let todoList = $state([]);
     let selectedDate = $state('');
@@ -99,7 +99,7 @@
 
 {#if allowed}
     <main class="bg-[#0e0b0b] min-h-screen flex overflow-hidden text-white">
-  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[300px]' : 'grid-cols-[0px]'}`}>
+  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden flex flex-col gap-3 p-6 border-r border-neutral-800 bg-[#0e0b0b]">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-white cursor-pointer">close</button>
       <h1 class="text-2xl font-bold mb-2">The Batcave</h1>
@@ -125,17 +125,19 @@
 
     <div class={sidebarOpen ? "" : "ml-10"}>
     <section class="p-8">
-        <h2 class="text-3xl font-black tracking-tight mb-4 text-white">Missions</h2>
+        <h2 class="text-3xl font-black tracking-tight mb-4 text-white text-center">Missions</h2>
+        <section class="w-64 mx-auto">
         <input bind:value={newItem} type="text" placeholder="New Mission...">
-        <input type="date" bind:value={selectedDate} />
+        <input type="date" class="text-black" bind:value={selectedDate} />
         <button class="text-white" onclick={addToList}>Add</button>
         <br/>
+        </section>
         {#each todoList as item, index}
-        <button onclick={() => makeClear(index)} class="text-white text-2xl"class:checked={item.status}>{item.text}</button> <br />
+        <button onclick={() => makeClear(index)} class="text-white text-2xl" class:checked={item.status}>{item.text}</button> <br />
         <sup class="text-white" onclick={() => removeFromList(index)}>remove</sup>
         <br/>
         {/each} 
-        <button onclick={removeCompleted} class="text-white">Remove Completed</button>
+        <div class="flex justify-center"><button onclick={removeCompleted} class="text-white">Remove Completed</button></div>
     </section>
 </div>
 </main>

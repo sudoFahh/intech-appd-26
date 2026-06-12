@@ -7,7 +7,7 @@
     import { db } from '$lib/firebase.client';
 
     let allowed = $state(false);
-    let sidebarOpen = $state(true); 
+    let sidebarOpen = $state(false); 
 
     onMount(() => {
         onAuthStateChanged(auth, (user) => {
@@ -99,7 +99,7 @@
 
 {#if allowed}
 <main class="bg-[#0e0b0b] min-h-screen flex overflow-hidden text-white">
-  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[300px]' : 'grid-cols-[0px]'}`}>
+  <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden flex flex-col gap-3 p-6 border-r border-neutral-800 bg-[#0e0b0b]">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-white cursor-pointer">close</button>
       <h1 class="text-2xl font-bold mb-2">The Batcave</h1>
@@ -124,27 +124,27 @@
     {/if}
 
     <div class={sidebarOpen ? "" : "ml-10"}>
-      <h2 class="text-3xl font-black tracking-tight mb-4 text-white">Arsenal</h2>
-      <section class="flex flex-col gap-4">
+      <h2 class="text-3xl font-black tracking-tight mb-4 text-white text-center">Arsenal</h2>
+      <section class="flex flex-col gap-4 text-center">
           <h2 class="text-2xl text-white">Devices:</h2>
           <div class="flex flex-wrap gap-4">
-              <button class="{statee.devices.sonic === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors" onclick={() => toggleDevice('sonic')}>
+              <button class="{statee.devices.sonic === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors mx-auto" onclick={() => toggleDevice('sonic')}>
                   <h2 class="text-lg font-bold">Sonic Devices</h2>
                   <p class="text-sm font-semibold mt-1">State: {statee.devices.sonic}</p>
               </button>
-              <button class="{statee.devices.emp === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors" onclick={() => toggleDevice('emp')}>
+              <button class="{statee.devices.emp === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors mx-auto" onclick={() => toggleDevice('emp')}>
                   <h2 class="text-lg font-bold">EMP Devices</h2>
                   <p class="text-sm font-semibold mt-1">State: {statee.devices.emp}</p>
               </button>
-              <button class="{statee.devices.gel === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors" onclick={() => toggleDevice('gel')}>
+              <button class="{statee.devices.gel === 'ONLINE' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors mx-auto" onclick={() => toggleDevice('gel')}>
                   <h2 class="text-lg font-bold">Explosive Gel Blasters</h2>
                   <p class="text-sm font-semibold mt-1">State: {statee.devices.gel}</p>
               </button>
-              <button class="{statee.devices.batmobile === 'READY' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors" onclick={() => toggleVehicleSuit('batmobile')}>
+              <button class="{statee.devices.batmobile === 'READY' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors mx-auto" onclick={() => toggleVehicleSuit('batmobile')}>
                   <h2 class="text-lg font-bold">Batmobile</h2>
                   <p class="text-sm font-semibold mt-1">State: {statee.devices.batmobile}</p>
               </button>
-              <button class="{statee.devices.suit === 'READY' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors" onclick={() => toggleVehicleSuit('suit')}>
+              <button class="{statee.devices.suit === 'READY' ? 'bg-green-500' : 'bg-red-500'} text-black rounded-xl p-5 shadow-lg border border-white/10 w-64 transition-colors mx-auto" onclick={() => toggleVehicleSuit('suit')}>
                   <h2 class="text-lg font-bold">Bat Suit</h2>
                   <p class="text-sm font-semibold mt-1">State: {statee.devices.suit}</p>
               </button>

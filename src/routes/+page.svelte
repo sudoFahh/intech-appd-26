@@ -1,48 +1,69 @@
-<main class="flex min-h-screen flex-col gap-2 bg-gray-100">
-	<header class="flex items-center gap-56 bg-gray-200 px-8 -mx-6 h-30">
-		<div>
-			<a href="/" class="text-5xl font-bold ml-10">WAYNE ENTERPRISES</a>
-			<p class="text-gray-600 ml-10">Future Through Innovation</p>
-		</div>
+<svelte:head>
+	<title>Internal Login</title>
+</svelte:head>
 
-		<a href="/about" class="underline decoration-solid hover:decoration-dotted text-gray-800">About Us</a>
-		<a href="/products" class="underline decoration-solid hover:decoration-dotted text-gray-800">View Our Products</a>
-		<a href="/contact" class="underline decoration-solid hover:decoration-dotted text-gray-800">Contact Us</a>
-		<a href="/newsroom" class="underline decoration-solid hover:decoration-dotted text-gray-800">Newsroom</a>
-	</header>
+<script lang="ts">
+ import { session } from '$lib/session';
+ import { auth } from '$lib/firebase.client';
+ import { signInWithEmailAndPassword } from 'firebase/auth';
+ import { goto } from '$app/navigation';
 
-	<div class="flex-1 flex items-center justify-center gap-8 px-8">
-		<div class="w-125 h-87.5 overflow-hidden">
-			<img
-				src="/batmobile.jpg"
-				alt="Batmobile"
-				class="w-full h-full object-cover object-center batmobile-fade"
-			>
-		</div>
+ let email = $state('');
+ let password = $state('');
+ let loginmessage = $state('');
+ let key = "";
 
-		<div class="max-w-160 space-y-4 leading-relaxed text-gray-700 px-6 p-8">
-			<p>Wayne Enterprises is dedicated to saving our planet, and we are proud to stand behind that mission every single day. I want to personally thank you for placing your trust in us. It is a responsibility we do not take lightly.</p>
+ async function loginWithMail(event: Event) {
+  event.preventDefault();
 
-			<p>Every advancement we make is driven by a simple belief: that progress should serve people, not the other way around. Gotham has never been an easy place to build a future in, but it is home. And it always will be worth fighting for.</p>
+  try {
+    const result = await signInWithEmailAndPassword(auth, email, password);
+    const user = result.user;
 
-			<p>On behalf of everyone at Wayne Enterprises, thank you for being part of what comes next.</p>
+    session.set({
+      loggedIn: true,
+      loading: false,
+      user: {
+        displayName: user.displayName,
+        email: user.email,
+        photoURL: user.photoURL,
+        uid: user.uid
+      }
+    });
 
-			<div class="mt-6 text-left">
-				<p class="font-medium text-gray-900">— Bruce Wayne</p>
-				<p class="mt-1 text-sm text-gray-500 italic">Chief Executive Officer, Wayne Enterprises</p>
-			</div>
-		</div>
-	</div>
-
-	<div class="fixed bottom-3 right-4 group">
-		<footer class="text-gray-400 opacity-0 group-hover:opacity-100 transition">
-			<a href="/internal" class="text-gray-400 text-xs">internal</a>
-		</footer>
-	</div>
-</main>
-
-<style>
-.batmobile-fade {
-	mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    if (user.email === 'bruce@wayne.com') {
+        loginmessage = "Welcome, Mr. Bruce. Redirecting...";
+        await goto('/wayne/ceo');
+    } else if (user.email === 'batman@wayne.com') {
+        loginmessage = "Welcome, Batman. Redirecting...";
+        key = Math.random().toString(36).substring(2, 15); // Generate a random key
+        document.cookie = `batman_key=${key}; path=/; max-age=600`; // Set cookie for 10 mins
+				key = ""
+        await goto('/wayne/batman');
+    } else {
+        loginmessage = "Incorrect Credentials";
+    }
+  } catch (error) {
+    console.error(error);
+    loginmessage = "Authentication failed.";
+  }
 }
-</style>
+</script>
+
+<main class="flex min-h-screen items-center justify-center bg-[#f0f0f0] p-4 font-sans antialiased selection:bg-neutral-200">
+ <div class="w-full max-w-90 rounded-lg bg-white p-10 text-center shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03)]">
+  <h1 class="mt-0 mb-6 text-xl font-semibold text-neutral-900">Login</h1>
+  
+  <form onsubmit={loginWithMail} class="flex flex-col gap-3">
+   <input bind:value={email} type="email" placeholder="Email" required class="rounded border border-neutral-200 bg-neutral-50 p-3 text-sm transition-colors duration-200 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"/>
+   <input bind:value={password} type="password" placeholder="Password" required class="rounded border border-neutral-200 bg-neutral-50 p-3 text-sm transition-colors duration-200 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"/>
+   <button type="submit" class="mt-2 rounded bg-neutral-950 p-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-neutral-800 active:bg-neutral-900">Login</button>
+  </form>
+  
+  {#if loginmessage}
+   <p class="mt-4 mb-0 text-xs text-neutral-500">{loginmessage}</p>
+  {/if}
+  
+  <a href="/" class="mt-6 inline-block text-xs text-neutral-400 no-underline transition-colors hover:text-neutral-600 hover:underline">Go home</a>
+ </div>
+</main>
