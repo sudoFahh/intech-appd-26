@@ -75,9 +75,8 @@
         saveState();
 	}
 	
-	function removeFromList(index) {
-		todoList.splice(index, 1)
-		todoList = todoList;
+	function removeFromList(index: number) {
+        todoList = todoList.filter((_, i) => i !== index);
         saveState();
     }
 
@@ -131,7 +130,7 @@
         </section>
         {#each todoList as item, index}
         <button onclick={() => callNumber(item.text)} class="text-white text-2xl">{item.text}</button> <br />
-        <sup class="text-white" onclick={() => removeFromList(index)}>remove</sup>
+        <sup class="text-white text-lg" onclick={() => removeFromList(index)}>remove</sup>
         <br/>
         {/each} 
     </section>

@@ -134,7 +134,7 @@
         </section>
         {#each todoList as item, index}
         <button onclick={() => makeClear(index)} class="text-white text-2xl" class:checked={item.status}>{item.text}</button> <br />
-        <sup class="text-white" onclick={() => removeFromList(index)}>remove</sup>
+        <sup class="text-white text-lg" onclick={() => removeFromList(index)}>remove</sup>
         <br/>
         {/each} 
         <div class="flex justify-center"><button onclick={removeCompleted} class="text-white">Remove Completed</button></div>

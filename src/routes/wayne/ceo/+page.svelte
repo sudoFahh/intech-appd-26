@@ -149,7 +149,7 @@
               <button onclick={() => makeClear(index)} class="text-left font-medium transition-all" class:checked={item.status}>
                 {item.text}
               </button>
-              <button class="text-xs text-red-400 hover:text-red-300 underline uppercase tracking-wider" onclick={() => removeFromList(index)}>remove</button>
+              <button class="text-lg text-red-400 hover:text-red-300 underline uppercase tracking-wider" onclick={() => removeFromList(index)}>remove</button>
             </div>
           {/each} 
         </div>
