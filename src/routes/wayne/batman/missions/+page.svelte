@@ -127,7 +127,7 @@
     <section class="p-8">
         <h2 class="text-3xl font-black tracking-tight mb-4 text-white text-center">Missions</h2>
         <section class="w-64 mx-auto">
-        <input bind:value={newItem} type="text" placeholder="New Mission...">
+        <input bind:value={newItem} type="text" class="text-black" placeholder="New Mission...">
         <input type="date" class="text-black" bind:value={selectedDate} />
         <button class="text-white" onclick={addToList}>Add</button>
         <br/>

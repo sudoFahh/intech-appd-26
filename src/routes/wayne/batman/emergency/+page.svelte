@@ -123,9 +123,9 @@
 
     <div class={sidebarOpen ? "" : "ml-10"}>
     <section class="p-8">
-        <h2 class="text-3xl font-black tracking-tight mb-4 text-white text-center">Missions</h2>
+        <h2 class="text-3xl font-black tracking-tight mb-4 text-white text-center">Emergency Calling</h2>
         <section class="w-64 mx-auto">
-        <input bind:value={newItem} type="text" placeholder="New Mission...">
+        <input bind:value={newItem} type="text" class="text-black" placeholder="New Phone number...">
         <button class="text-white" onclick={addToList}>Add</button>
         <br/>
         </section>
