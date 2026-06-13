@@ -11,3 +11,6 @@ Instructions:
 2. for Batman login:
   email: batman@wayne.com
   password: BruceWayneisBatman@123
+
+
+# SECOND REPO THAT ACTUALLY CONTAINS THE APP: [(https://github.com/sudoFahh/intech-appd2-26)](https://github.com/sudoFahh/intech-appd2-26)
