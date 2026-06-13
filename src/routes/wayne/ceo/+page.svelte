@@ -101,8 +101,6 @@
 
 {#if allowed}
 <main class="bg-[#fcfcfc] text-neutral-900 min-h-screen flex overflow-hidden">
-  
-
   <div class={`grid overflow-hidden transition-all duration-300 shrink-0 ${sidebarOpen ? 'grid-cols-[100vw]' : 'grid-cols-[0px]'}`}>
     <div class="overflow-hidden flex flex-col gap-3 p-6 border-r border-neutral-200 bg-[#f5f5f5] h-full">
       <button onclick={() => sidebarOpen = !sidebarOpen} class="material-symbols-outlined self-end text-neutral-600 cursor-pointer hover:text-black">
@@ -130,6 +128,7 @@
     {/if}
 
     <div class={sidebarOpen ? "" : "ml-10"}>
+    <div class="bg-[#fcfcfc] text-neutral-900 flex flex-col overflow-y-auto">
       <h1 class="text-3xl font-black tracking-tight mb-4">CEO's Office</h1>
       <p class="text-neutral-600 max-w-2xl mb-8">
         Welcome, Mr. Wayne. Here you can access all internal resources, financial reports, and operations details related to Wayne Enterprises.
@@ -161,9 +160,8 @@
       </section>
     </div>
   </div>
-
-  <div class="p-8 overflow-y-auto shrink-0 border-l border-neutral-200 bg-white min-h-screen">
-    <div class="bg-white border border-neutral-200 rounded-lg p-4 w-full max-w-md">
+  <br /> <br />
+    <div class="bg-white border border-neutral-200 rounded-lg p-4 w-full max-w-md mx-auto">
       <div class="flex justify-between items-center mb-2">
         <div>
           <h2 class="font-bold">Wayne Enterprises</h2>
@@ -211,11 +209,8 @@
           <p class="text-green-600 mt-1">▲ 5.4%</p>
         </div>
       </div>
-      <hr class="mb-2 mt-2"/>
-      <p class="text-sm text-neutral-700 leading-relaxed"><b>Quarterly Summary (Generated with AI):</b> Wayne Enterprises and its subsidiaries continue to demonstrate strong long-term growth despite periodic market volatility. Wayne Aerospace has benefited from increased government and commercial contracts, while Wayne Applied Sciences remains a key driver of innovation-led expansion. Wayne Energy posted steady gains following infrastructure investments, and Wayne Biotech recovered after regulatory concerns earlier in the fiscal year. Overall, the Wayne portfolio maintains a positive outlook with diversified performance across strategic sectors. Analysts project moderate but stable growth over the next two quarters, supported by continued investment in research, infrastructure, and emerging technologies. Internal assessments indicate that the conglomerate's diversified structure has strengthened its resilience against sector-specific downturns and broader economic uncertainty.</p>
-    </div>
   </div>
-
+  </div>
 </main>
 {/if}
 

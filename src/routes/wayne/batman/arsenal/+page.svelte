@@ -152,10 +152,10 @@
       </section>
 
       <section class="py-8 text-white">
-          <h2 class="text-2xl mb-4">Tools Inventory</h2>
+          <h2 class="text-2xl mb-4 text-center">Tools Inventory</h2>
           <div class="flex flex-col gap-2">
               {#each Object.entries(statee.inventory) as [key, value]}
-                  <div class="flex items-center justify-between w-80 border p-3 rounded-xl border-white/10 bg-black/30">
+                  <div class="flex items-center justify-between w-80 mx-auto border p-3 rounded-xl border-white/10 bg-black/30">
                       <div>
                           <p class="font-bold capitalize">{key}</p>
                           <p class="text-sm text-gray-400">Stock: {value}</p>
