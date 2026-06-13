@@ -52,7 +52,7 @@
 
 <main class="flex min-h-screen items-center justify-center bg-[#f0f0f0] p-4 font-sans antialiased selection:bg-neutral-200">
  <div class="w-full max-w-90 rounded-lg bg-white p-10 text-center shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-1px_rgba(0,0,0,0.03)]">
-  <h1 class="mt-0 mb-6 text-xl font-semibold text-neutral-900">Login</h1>
+  <h1 class="mt-0 mb-6 text-xl font-semibold text-neutral-900">Wayne Enterprises Login</h1>
   
   <form onsubmit={loginWithMail} class="flex flex-col gap-3">
    <input bind:value={email} type="email" placeholder="Email" required class="rounded border border-neutral-200 bg-neutral-50 p-3 text-sm transition-colors duration-200 placeholder:text-neutral-400 focus:border-neutral-400 focus:outline-none"/>
@@ -63,7 +63,5 @@
   {#if loginmessage}
    <p class="mt-4 mb-0 text-xs text-neutral-500">{loginmessage}</p>
   {/if}
-  
-  <a href="/" class="mt-6 inline-block text-xs text-neutral-400 no-underline transition-colors hover:text-neutral-600 hover:underline">Go home</a>
  </div>
 </main>
