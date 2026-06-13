@@ -69,6 +69,7 @@
         <p class="text-gray-500 font-semibold mt-2">Batcomputer</p>
         <a href="/wayne/batman/arsenal" class="text-blue-500 hover:underline">Access Arsenal</a>
         <a href="/wayne/batman/missions" class="text-blue-500 hover:underline">Access Missions</a>
+        <a href="/wayne/batman/emergency" class="text-blue-500 hover:underline">Access Emergency Calling</a>
         <a href="/wayne/batman/comms" class="text-blue-500 hover:underline">Access Communication Center</a>
         <a href="/wayne/batman/maps" class="text-blue-500 hover:underline">Access the Map of Gotham</a>
         <a href="/wayne/batman/music" class="text-blue-500 hover:underline">Access the Bat Jukebox</a>

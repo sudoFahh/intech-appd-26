@@ -55,15 +55,15 @@
 
     <div class={sidebarOpen ? "" : "ml-10"}>
   <h2 class="text-3xl font-black tracking-tight mb-4">Financial Reports</h2>
-	<a href="/pdfs/1.pdf" class="text-blue-500 hover:underline">First Financial Report</a> <br />
-	<a href="/pdfs/2.pdf" class="text-blue-500 hover:underline">Second Financial Report</a> <br />
-	<a href="/pdfs/3.pdf" class="text-blue-500 hover:underline">Third Financial Report</a> <br />
-	<a href="/pdfs/4.pdf" class="text-blue-500 hover:underline">Fourth Financial Report</a> <br />
-	<a href="/pdfs/5.pdf" class="text-blue-500 hover:underline">Fifth Financial Report</a> <br />
-	<a href="/pdfs/6.pdf" class="text-blue-500 hover:underline">Sixth Financial Report</a> <br />
-	<a href="/pdfs/7.pdf" class="text-blue-500 hover:underline">Seventh Financial Report</a> <br />
-	<a href="/pdfs/8.pdf" class="text-blue-500 hover:underline">Eight Financial Report</a> <br />
-	<a href="/pdfs/9.pdf" class="text-blue-500 hover:underline">Ninth Financial Report</a> <br />
-	<a href="/pdfs/10.pdf" class="text-blue-500 hover:underline">Tenth Financial Report</a> <br />
+	<a href="/pdfs/1.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">First Financial Report</a>
+	<a href="/pdfs/2.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Second Financial Report</a> <br />
+	<a href="/pdfs/3.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Third Financial Report</a> <br />
+	<a href="/pdfs/4.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Fourth Financial Report</a> <br />
+	<a href="/pdfs/5.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Fifth Financial Report</a> <br />
+	<a href="/pdfs/6.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Sixth Financial Report</a> <br />
+	<a href="/pdfs/7.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Seventh Financial Report</a> <br />
+	<a href="/pdfs/8.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Eight Financial Report</a> <br />
+	<a href="/pdfs/9.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ninth Financial Report</a> <br />
+	<a href="/pdfs/10.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Tenth Financial Report</a> <br />
 </main>
 {/if}
