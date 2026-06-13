@@ -1,38 +1,13 @@
-# Manik Sharma 9H's WebD for Intech '26
+# Manik Sharma 9H's AppD for Intech '26
+
+A note: The reason this has two repos is that the app is just a WebView wrapper for a modified site, so its better optimzed on Mobile
 
 Instructions:
 
-The page opens to a cover page.
-To login to a dashboard:
-go the the bottom right corner of the page. you will see some text, "internal".
+1. for CEO login:
+   email: bruce@wayne.com
+   password: BruceWayne@123
 
-Click it or navigate to /internal.
-
-(i) CEO's Dashboard:
-
-Email: bruce@wayne.com
-
-Password: BruceWayne@123
-
-(ii) Batman's Dashboard:
-
-navigate to /404
-
-and type in the page (not devTools) the text:
-
-"brucewayneisbatman"
-(no quotes)
-
-then navigate back to /internal
-
-and type in:
-
-Email: batman@wayne.com
-
-Password: BruceWayneisBatman@123
-
-Thank you!
-
-If you have any problems or questions, please contact Manik (Me) on Discord
-
-Discord - compactdiscdrive
+2. for Batman login:
+  email: batman@wayne.com
+  password: BruceWayneisBatman@123
